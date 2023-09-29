@@ -1,0 +1,38 @@
+class ATM :
+    # Initialize
+    def __init__ (self, name, number, balance = 0) :
+        self.name = name
+        self.number = number
+        self.balance = balance
+    ## Function of ATM
+    ## Show detail
+    def show_detail(self) :
+        print(f"Account username: {self.name}")
+        print(f"Account number: {self.number}")
+        print(f"Available Balance: {self.balance}")
+    ## add money to balance
+    def deposit(self, amount) :
+        self.amount = amount
+        self.balance += self.amount
+        print(f"Deposit {amount} THB\nCurrent Total Balance: {self.balance} THB")
+    ## Withdraw money
+    def withdraw(self, amount) :
+        self.amount = amount
+        if self.balance < self.amount :
+            print(f"Sorry your balance only have {self.balance} THB, Please input amount for withdraw again")
+        else :
+            self.balance -= self.amount
+            print(f"Withdraw {amount} THB\nCurrent Total Balance: {self.balance} THB")
+    ## transfer money
+    def transfer(self, amount, dummy_user) :
+        self.amount = amount
+
+        if self.balance < self.amount :
+            print(f"Sorry system can't transfer to {self.dummy_user} your balance only have {self.balance} THB, Please input amount for transfer again")
+        else :
+            self.balance -= self.amount
+            print(f"Transfer {amount} THB to {self.dummy_user}\nCurrent Total Balance {self.balance} THB")
+    ## check balance
+    def check(self, balance) :
+        print(f"Avaliable Balance : {self.balance} THB")
+
